@@ -32,9 +32,6 @@ public class CategoryPresenter implements CategoryContract.Presenter {
         view.get().navigateToNextScreen();
     }
 
-
-
-
     private void passDataToNextScreen(CategoryItem item){
         mediator.setCategory(item);
    }

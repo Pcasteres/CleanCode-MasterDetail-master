@@ -2,13 +2,10 @@ package es.ulpgc.eite.cleancode.catalog.category;
 
 import android.content.Intent;
 import android.os.Bundle;
-//import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 
-//import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import es.ulpgc.eite.cleancode.catalog.R;
 import es.ulpgc.eite.cleancode.catalog.app.CategoryItem;
+import es.ulpgc.eite.cleancode.catalog.products.ProductListActivity;
 
 
 public class CategoryActivity
@@ -31,7 +29,6 @@ public class CategoryActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         //getSupportActionBar().setTitle(R.string.app_name);
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -69,7 +66,7 @@ public class CategoryActivity
 
     @Override
     public void navigateToNextScreen() {
-        Intent intent = new Intent(this, CategoryActivity.class);
+        Intent intent = new Intent(this, ProductListActivity.class);
         startActivity(intent);
     }
 
