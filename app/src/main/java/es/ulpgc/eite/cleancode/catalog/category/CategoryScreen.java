@@ -1,10 +1,13 @@
 package es.ulpgc.eite.cleancode.catalog.category;
 
-import android.support.v4.app.FragmentActivity;
+//import android.support.v4.app.FragmentActivity;
+
+import androidx.fragment.app.FragmentActivity;
 
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.catalog.R;
+import es.ulpgc.eite.cleancode.catalog.app.CatalogMediator;
 
 public class CategoryScreen {
 
@@ -15,10 +18,10 @@ public class CategoryScreen {
 
         String data = context.get().getString(R.string.app_name);
 
-        AppMediator mediator = AppMediator.getInstance();
+        CatalogMediator mediator = CatalogMediator.getInstance();
 
         CategoryContract.Presenter presenter = new CategoryPresenter(mediator);
-        CategoryContract.Model model = new CategoryModel(data);
+        CategoryContract.Model model = new CategoryModel();
         presenter.injectModel(model);
         presenter.injectView(new WeakReference<>(view));
 

@@ -1,6 +1,11 @@
 package es.ulpgc.eite.cleancode.catalog.category;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.eite.cleancode.catalog.app.CategoryItem;
+import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
+import es.ulpgc.eite.cleancode.catalog.products.ProductListViewModel;
 
 public interface CategoryContract {
 
@@ -17,17 +22,10 @@ public interface CategoryContract {
 
         void injectModel(Model model);
 
-        void onResume();
+        void fetchCategoryData();
 
-        void onStart();
+        void selectProductListData(CategoryItem item);
 
-        void onRestart();
-
-        void onBackPressed();
-
-        void onPause();
-
-        void onDestroy();
     }
 
     interface Model {
@@ -38,6 +36,8 @@ public interface CategoryContract {
         void onRestartScreen(String data);
 
         void onDataFromPreviousScreen(String data);
+
+        List<CategoryItem> fetchProductListData();
     }
 
 }
