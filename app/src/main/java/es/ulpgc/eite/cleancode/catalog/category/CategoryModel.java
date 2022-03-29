@@ -26,7 +26,7 @@ public class CategoryModel implements CategoryContract.Model {
         itemList.add(item);
     }
     private CategoryItem createProduct(int position) {
-        String content = "Product " + position;
+        String content = "Category " + position;
 
         return new CategoryItem(
                 position, content, fetchProductDetails(position)
