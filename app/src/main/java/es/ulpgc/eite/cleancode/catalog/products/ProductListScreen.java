@@ -20,7 +20,7 @@ public class ProductListScreen {
     //ProductListContract.Router router = new ProductListRouter(mediator);
     //ProductListContract.Presenter presenter = new ProductListPresenter(state);
     ProductListContract.Presenter presenter = new ProductListPresenter(mediator);
-    ProductListModel model = new ProductListModel();
+    ProductListModel model = new ProductListModel(mediator.getCategoryItem().id);
     presenter.injectView(new WeakReference<>(view));
     presenter.injectModel(model);
     //presenter.injectRouter(router);

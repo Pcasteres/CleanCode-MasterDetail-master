@@ -52,17 +52,10 @@ public class ProductListPresenter implements ProductListContract.Presenter {
   public void fetchProductListData() {
     // Log.e(TAG, "fetchProductListData()");
 
-    // call the model
-    CategoryItem categoria = getDataFromCategory();
-    Log.e(TAG, categoria.id + "");
     state.products = model.fetchProductListData();
 
     view.get().displayProductListData(state);
 
-  }
-  private CategoryItem getDataFromCategory() {
-    CategoryItem product = mediator.getCategoryItem();
-    return product;
   }
 
 
@@ -73,6 +66,4 @@ public class ProductListPresenter implements ProductListContract.Presenter {
     //router.navigateToProductDetailScreen();
     view.get().navigateToProductDetailScreen();
   }
-
-
 }

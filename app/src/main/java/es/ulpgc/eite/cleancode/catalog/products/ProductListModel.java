@@ -15,7 +15,7 @@ public class ProductListModel implements ProductListContract.Model {
   private final int COUNT = 20;
   private int id1;
 
-  public ProductListModel() {
+  public ProductListModel(int id1) {
     // Add some sample items
     for (int index = 1; index <= COUNT; index++) {
       addProduct(createProduct(index, id1));
@@ -33,14 +33,7 @@ public class ProductListModel implements ProductListContract.Model {
     itemList.add(item);
   }
 
-  @Override
-  public String Titulo() {
-    return "Category" + id1;
-  }
-
   private ProductItem createProduct(int position, int id1) {
-    //Cambiando el layout para que el nombre
-    // del producto aparezca diferente
     String content = "Product " + id1 + "." + position;
 
     return new ProductItem(

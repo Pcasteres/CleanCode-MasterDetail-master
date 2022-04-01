@@ -26,7 +26,6 @@ interface ProductListContract {
 
   interface Model {
     List<ProductItem> fetchProductListData();
-    String Titulo();
   }
 
 //  interface Router {
